@@ -1,6 +1,6 @@
 import React from 'react';
 import './master-view.css';
-import { Avatar, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TablePagination, TableRow } from '@mui/material';
+import { Avatar, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@mui/material';
 import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
 import { Link } from 'react-router-dom';
 
@@ -31,13 +31,20 @@ const MasterView: React.FC<any> = (props: any) => {
     <h2>Masters of React</h2>
       <TableContainer component={Paper} className="table-main">
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+          <TableHead>
+            <TableRow>
+              <TableCell style={{fontWeight: "bold"}}>Character</TableCell>
+              <TableCell style={{fontWeight: "bold"}}>Weight</TableCell>
+              <TableCell style={{fontWeight: "bold"}}>Age</TableCell>
+            </TableRow>
+          </TableHead>
           <TableBody>
             {(rowsPerPage > 0
               ? props.charData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : props.charData
             ).map((row: any) => (
                 <TableRow key={row.id}>
-                    <TableCell component="th" scope="row">
+                    <TableCell>
                       <Link
                         style={{ display: "block", textDecoration: "none" }}
                         to={`/details/${row.id}`}
@@ -48,10 +55,10 @@ const MasterView: React.FC<any> = (props: any) => {
                         {row.name}
                       </Link>
                     </TableCell>
-                    <TableCell style={{ width: 160 }} align="right">
+                    <TableCell>
                       {row.weight}
                     </TableCell>
-                    <TableCell style={{ width: 160 }} align="right">
+                    <TableCell>
                       {row.age}
                     </TableCell>
                 </TableRow>

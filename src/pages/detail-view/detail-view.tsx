@@ -31,11 +31,11 @@ const DetailView: React.FC<any> = (props: any) => {
       <Grid container spacing={2} className="grid-main">
         <Grid item className="grid-section" xs={4}>
           { loading ? <CircularProgress/> : 
-          <div>
+          <div style={{ width: 256, height: 400, alignItems: "center" }}>
           <Avatar 
-            sx={{ width: 256, height: 256 }}
+            sx={{ width: 256, height: 256}}
             alt={character.name} src={character.thumbnail} />
-            {character.name}
+            <div style={{marginTop: "20px"}}>{character.name}</div>
           </div>
           }
         </Grid>
@@ -75,7 +75,7 @@ const DetailView: React.FC<any> = (props: any) => {
                 {friend}
               </Button>
               ) :
-              <div>No friends found</div>}
+              <div>No friends found :(</div>}
           </Grid>
         </Grid>
       </Grid>
