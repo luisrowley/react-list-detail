@@ -21,7 +21,7 @@ const App: React.FC = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<MasterView charData={charData}></MasterView>}/>
-        <Route path="details/:id" element={<DetailView/>}/>
+        <Route path="details/:id" element={<DetailView charData={charData}/>}/>
       </Routes>
     </div>
   );

@@ -9,7 +9,6 @@ const MasterView: React.FC<any> = (props: any) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - props.charData.length) : 0;
 
@@ -28,7 +27,9 @@ const MasterView: React.FC<any> = (props: any) => {
   };
 
   return (
-      <TableContainer component={Paper}>
+    <>
+    <h2>Masters of React</h2>
+      <TableContainer component={Paper} className="table-main">
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
           <TableBody>
             {(rowsPerPage > 0
@@ -40,6 +41,7 @@ const MasterView: React.FC<any> = (props: any) => {
                       <Link
                         style={{ display: "block", textDecoration: "none" }}
                         to={`/details/${row.id}`}
+                        state={{row}}
                         key={row.id}
                       >
                         <Avatar alt="Remy Sharp" src={row.thumbnail} />
@@ -82,6 +84,7 @@ const MasterView: React.FC<any> = (props: any) => {
           </TableFooter>
         </Table>
       </TableContainer>
+      </>
   );
 }
 
