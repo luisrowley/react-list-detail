@@ -34,6 +34,7 @@ const DataTable: React.FC<any> = () => {
           <TableHead>
             <TableRow>
               <TableCell style={{fontWeight: "bold"}}>Character</TableCell>
+              <TableCell style={{fontWeight: "bold"}}>Height</TableCell>
               <TableCell style={{fontWeight: "bold"}}>Weight</TableCell>
               <TableCell style={{fontWeight: "bold"}}>Age</TableCell>
             </TableRow>
@@ -54,6 +55,9 @@ const DataTable: React.FC<any> = () => {
                         <Avatar alt="Remy Sharp" src={row.thumbnail} />
                         {row.name}
                       </Link>
+                    </TableCell>
+                    <TableCell>
+                      {row.height}
                     </TableCell>
                     <TableCell>
                       {row.weight}
