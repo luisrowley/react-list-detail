@@ -100,7 +100,3 @@ const DataTable: React.FC<any> = () => {
 }
 
 export default DataTable;
-function GlobalConfigContext(GlobalConfigContext: any): { charData: any; } {
-    throw new Error("Function not implemented.");
-}
-
