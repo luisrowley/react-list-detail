@@ -26,8 +26,8 @@ const App: React.FC = () => {
     <div className="App">
       <GlobalContextContext.Provider value={context}>
         <Routes>
-          <Route path="/" element={<MasterView charData={charData}></MasterView>}/>
-          <Route path="details/:id" element={<DetailView charData={charData}/>}/>
+          <Route path="/" element={<MasterView/>}/>
+          <Route path="details/:id" element={<DetailView/>}/>
         </Routes>
       </GlobalContextContext.Provider>
     </div>
