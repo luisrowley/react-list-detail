@@ -1,16 +1,18 @@
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody, Avatar, TableFooter, TablePagination } from "@mui/material";
 import TablePaginationActions from "@mui/material/TablePagination/TablePaginationActions";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { GlobalContextContext } from "../data/context";
 import { Character } from "../interfaces/character";
 
-const DataTable: React.FC<any> = (props: any) => {
+const DataTable: React.FC<any> = () => {
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
+    const { charData } = useContext(GlobalContextContext);
   
     const emptyRows =
-      page > 0 ? Math.max(0, (1 + page) * rowsPerPage - props.charData.length) : 0;
+      page > 0 ? Math.max(0, (1 + page) * rowsPerPage - charData.length) : 0;
   
     const handleChangePage = (
       event: React.MouseEvent<HTMLButtonElement> | null,
@@ -38,8 +40,8 @@ const DataTable: React.FC<any> = (props: any) => {
           </TableHead>
           <TableBody>
             {(rowsPerPage > 0
-              ? props.charData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-              : props.charData
+              ? charData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+              : charData
             ).map((row: Character) => (
                 <TableRow key={row.id}>
                     <TableCell>
@@ -72,7 +74,7 @@ const DataTable: React.FC<any> = (props: any) => {
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
                 colSpan={3}
-                count={props.charData.length}
+                count={charData.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
                 SelectProps={{
@@ -93,3 +95,7 @@ const DataTable: React.FC<any> = (props: any) => {
 }
 
 export default DataTable;
+function GlobalConfigContext(GlobalConfigContext: any): { charData: any; } {
+    throw new Error("Function not implemented.");
+}
+

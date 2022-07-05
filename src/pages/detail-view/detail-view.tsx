@@ -43,7 +43,7 @@ const DetailView: React.FC<any> = (props: any) => {
         </Grid>
         <Grid item container className="grid-section" xs={8}>
           <Grid item xs={12} sx={{ display: "flex", justifyContent: "center" }}>
-            <PropertyList character={character}>
+            <PropertyList character={character} >
             </PropertyList>
           </Grid>
           <Grid item xs={12}>

@@ -3,8 +3,14 @@ import { deepPurple } from "@mui/material/colors";
 import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import HeightIcon from '@mui/icons-material/Height';
 import ScaleIcon from '@mui/icons-material/Scale';
+import { Character } from "../interfaces/character";
 
-const PropertyList: React.FC<any> = (props: any) => {
+interface IPropertyListProps {
+    character: Character;
+    children?: never[];
+}
+
+const PropertyList: React.FC<IPropertyListProps> = (props: IPropertyListProps) => {
 
     return (
     <List sx={{ width: "500px", display: "flex" }}>
