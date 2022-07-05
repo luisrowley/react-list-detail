@@ -3,6 +3,7 @@ import './master-view.css';
 import { Avatar, Paper, Table, TableBody, TableCell, TableContainer, TableFooter, TableHead, TablePagination, TableRow } from '@mui/material';
 import TablePaginationActions from '@mui/material/TablePagination/TablePaginationActions';
 import { Link } from 'react-router-dom';
+import { Character } from '../../interfaces/character';
 
 const MasterView: React.FC<any> = (props: any) => {
 
@@ -42,7 +43,7 @@ const MasterView: React.FC<any> = (props: any) => {
             {(rowsPerPage > 0
               ? props.charData.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               : props.charData
-            ).map((row: any) => (
+            ).map((row: Character) => (
                 <TableRow key={row.id}>
                     <TableCell>
                       <Link
