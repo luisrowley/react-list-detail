@@ -2,8 +2,9 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import TablePaginationActions from "@mui/material/TablePagination/TablePaginationActions";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { GlobalContextContext } from "../data/context";
-import { Character } from "../interfaces/character";
+import { GlobalContextContext } from "../../data/context";
+import { Character } from "../../interfaces/character";
+import './data-table.css';
 
 const DataTable: React.FC<any> = () => {
 
@@ -33,10 +34,10 @@ const DataTable: React.FC<any> = () => {
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
           <TableHead>
             <TableRow>
-              <TableCell style={{fontWeight: "bold"}}>Character</TableCell>
-              <TableCell style={{fontWeight: "bold"}}>Height</TableCell>
-              <TableCell style={{fontWeight: "bold"}}>Weight</TableCell>
-              <TableCell style={{fontWeight: "bold"}}>Age</TableCell>
+              <TableCell className="t-cell">Character</TableCell>
+              <TableCell className="t-cell">Height</TableCell>
+              <TableCell className="t-cell">Weight</TableCell>
+              <TableCell className="t-cell">Age</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -52,7 +53,7 @@ const DataTable: React.FC<any> = () => {
                         state={{row}}
                         key={row.id}
                       >
-                        <Avatar alt="Remy Sharp" src={row.thumbnail} />
+                        <Avatar src={row.thumbnail} />
                         {row.name}
                       </Link>
                     </TableCell>

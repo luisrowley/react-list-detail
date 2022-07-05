@@ -3,7 +3,7 @@ import { deepPurple } from "@mui/material/colors";
 import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import HeightIcon from '@mui/icons-material/Height';
 import ScaleIcon from '@mui/icons-material/Scale';
-import { Character } from "../interfaces/character";
+import { Character } from "../../interfaces/character";
 
 interface IPropertyListProps {
     character: Character;

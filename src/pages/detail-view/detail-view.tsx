@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import './detail-view.css';
 import { Character } from '../../interfaces/character';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import PropertyList from '../../components/property-list';
+import PropertyList from '../../components/property-list/property-list';
 import { GlobalContextContext } from '../../data/context';
 
 const DetailView: React.FC<any> = () => {

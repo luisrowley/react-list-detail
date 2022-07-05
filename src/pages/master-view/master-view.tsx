@@ -1,6 +1,6 @@
 import React from 'react';
 import './master-view.css';
-import DataTable from '../../components/data-table';
+import DataTable from '../../components/data-table/data-table';
 
 const MasterView: React.FC<any> = () => {
 
