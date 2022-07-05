@@ -1,15 +1,17 @@
 import { Avatar, Button, CircularProgress, Grid } from '@mui/material';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './detail-view.css';
 import { Character } from '../../interfaces/character';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PropertyList from '../../components/property-list';
+import { GlobalContextContext } from '../../data/context';
 
-const DetailView: React.FC<any> = (props: any) => {
+const DetailView: React.FC<any> = () => {
 
   const { state } : any = useLocation();
   const [character, setCharacter]:any = React.useState({});
+  const { charData } = useContext(GlobalContextContext);
   const [loading, setLoading] = React.useState(false);
 
   useEffect(() => {
@@ -18,7 +20,7 @@ const DetailView: React.FC<any> = (props: any) => {
 
   const setCharacterByName = async (charname: string) => {
     setLoading(true);
-    let character = await props.charData.find((character: Character) => character.name === charname);
+    let character = await charData.find((character: Character) => character.name === charname);
     if(character) {
       setLoading(false);
       setCharacter(character);
