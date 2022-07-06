@@ -11,4 +11,4 @@ export const initialContextState: IDefaultContextState = {
     charData: [],
     setCharData: () => {}
 };
-export const GlobalContextContext = createContext(initialContextState); 
+export const GlobalContext = createContext(initialContextState); 

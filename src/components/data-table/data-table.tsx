@@ -2,7 +2,7 @@ import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, TableBody
 import TablePaginationActions from "@mui/material/TablePagination/TablePaginationActions";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { GlobalContextContext } from "../../data/context";
+import { GlobalContext } from "../../data/context";
 import { Character } from "../../interfaces/character";
 import './data-table.css';
 
@@ -10,7 +10,7 @@ const DataTable: React.FC<any> = () => {
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const { charData } = useContext(GlobalContextContext);
+    const { charData } = useContext(GlobalContext);
     const headerCells = ['Character', 'Height', 'Weight', 'Age'];
   
     const emptyRows =

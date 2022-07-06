@@ -5,13 +5,13 @@ import './detail-view.css';
 import { Character } from '../../interfaces/character';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PropertyList from '../../components/property-list/property-list';
-import { GlobalContextContext } from '../../data/context';
+import { GlobalContext } from '../../data/context';
 
 const DetailView: React.FC<any> = () => {
 
   const { state } : any = useLocation();
   const [character, setCharacter]:any = React.useState({});
-  const { charData } = useContext(GlobalContextContext);
+  const { charData } = useContext(GlobalContext);
   const [loading, setLoading] = React.useState(false);
 
   useEffect(() => {

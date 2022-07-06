@@ -5,7 +5,7 @@ import { DEFAULT_ENTRY_NAME, endpoints } from './constants/endpoints';
 import MasterView from './pages/master-view/master-view';
 import { Route, Routes } from 'react-router';
 import DetailView from './pages/detail-view/detail-view';
-import { GlobalContextContext, initialContextState } from './data/context';
+import { GlobalContext, initialContextState } from './data/context';
 
 const App: React.FC = () => {
 
@@ -24,12 +24,12 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <GlobalContextContext.Provider value={context}>
+      <GlobalContext.Provider value={context}>
         <Routes>
           <Route path="/" element={<MasterView/>}/>
           <Route path="details/:id" element={<DetailView/>}/>
         </Routes>
-      </GlobalContextContext.Provider>
+      </GlobalContext.Provider>
     </div>
   );
 }
