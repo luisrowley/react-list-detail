@@ -11,6 +11,7 @@ const DataTable: React.FC<any> = () => {
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
     const { charData } = useContext(GlobalContextContext);
+    const headerCells = ['Character', 'Height', 'Weight', 'Age'];
   
     const emptyRows =
       page > 0 ? Math.max(0, (1 + page) * rowsPerPage - charData.length) : 0;
@@ -34,10 +35,7 @@ const DataTable: React.FC<any> = () => {
         <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
           <TableHead>
             <TableRow>
-              <TableCell className="t-cell">Character</TableCell>
-              <TableCell className="t-cell">Height</TableCell>
-              <TableCell className="t-cell">Weight</TableCell>
-              <TableCell className="t-cell">Age</TableCell>
+              {headerCells.map((cell) => (<TableCell className="t-cell">{cell}</TableCell>))}
             </TableRow>
           </TableHead>
           <TableBody>
