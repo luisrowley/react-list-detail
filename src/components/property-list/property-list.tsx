@@ -36,7 +36,7 @@ const PropertyList: React.FC<IPropertyListProps> = (props: IPropertyListProps) =
                 <HeightIcon color="secondary" />
             </Avatar>
             </ListItemAvatar>
-            <ListItemText primary="Height" secondary={props.character.weight} />
+            <ListItemText primary="Height" secondary={props.character.height} />
         </ListItem>
     </List>
     );
